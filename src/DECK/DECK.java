@@ -1,62 +1,71 @@
-package DECK;
+
 import java.awt.*;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Deck {
+public class DECK {
     public static void main(String [] args){
-        Card card = new card ();
-        int PALOS = card.Palo.lenght;
-        int VALORES = card.Valor.length;
-        int COLORES = card.Color.length;
-        int C = PALOS * VALORES * COLORES;
+        Card card = new Card();
+        int PALOS = card.palo.length;
+        int VALORES = card.valor.length;
+        int COLORES = card.color.length;
+        int N = PALOS * VALORES * COLORES;
 
-        ArrayList<string> DECK = new ArrayList<string>();
-        for (int w = 0; < VALORES; w++){
-            for (int e = 0; j < PALOS; e++) {
-                Deck.add(card.Palo[e] + ", ROJO , " + CARD.VALOR[w]);
-                Deck.add(card.Palo[e] + ", NEGRO , " + CARD.VALOR[w]);
+
+        ArrayList<String> Deck = new ArrayList<String>();
+        for (int w = 0; w < VALORES; w++){
+            for (int e = 0; e < PALOS; e++) {
+              Deck.add(card.palo[e] + ", ROJO, " + card.valor[w]);
+                Deck.add(card.palo[e] + ", NEGRO, " + card.valor[w]);
+                System.out.print("");
             }
         }
-        Iterator<String> CartasIterator = DECK.iterator();
-        while(CartasIterator).hasNext()){
-            String elemento = cartasIterator.next();
-            System.out.print(elemento+" ../..");
+        Iterator<String> CartasIterator = Deck.iterator();
+        while (CartasIterator.hasNext()){
+            String cartas = CartasIterator.next();
+
         }
-        suflle(DECK);
-        head(DECK);
-        pick(DECK);
-        hand(DECK);
+
+        suflle(Deck);
+        head(Deck);
+        pick(Deck);
+        hand(Deck);
     }
-    public static void suflle(ArrayList DECK){
-        ArrayList<String> values = DECK;
-        Collections.shuffle(values);
-        System.out.println("\c Se Mezcló el Deck.");
-        Iterator<String> CartasIterator = deck.iterator();
+    public static void suflle(ArrayList Deck){
+        ArrayList<String> valores = Deck;
+        Collections.shuffle(valores);
+        Iterator<String> CartasIterator = Deck.iterator();
         while(CartasIterator.hasNext()){
-            String pieza = CartasIterator.next();
-            System.out.print(Pieza+" / ");
+          String car = CartasIterator.next();
+            System.out.println(car+" / ");
         }
+
+        System.out.println("Se Mezclo Deck");
     }
-    public static void head(ArrayList DECK){
-        System.out.println(DECK.get(0));
-        DECK.remove(0);
-        System.out.println("Quedan " + DECK.size() + " cartas \n");
+    public static void head(ArrayList Deck){
+        System.out.println("     ");
+        System.out.println("     ");
+        System.out.println("Head");
+        System.out.println(Deck.get(0));
+        Deck.remove(0);
+        System.out.println("Quedan " + Deck.size() + " cartas \n");
     }
-    public static void pick(ArrayList  DECK){
+    public static void pick(ArrayList  Deck){
         Random aleatorio = new Random();
-        System.out.println(deck.get(aleatorio.nextInt(DECK.size())));
-        DECK.remove(aleatorio.nextInt(DECK.size()));
-        System.out.println("Quedan " + DECK.size() + " cartas \n");
+        System.out.println("Pick");
+        System.out.println(Deck.get(aleatorio.nextInt(Deck.size())));
+        Deck.remove(aleatorio.nextInt(Deck.size()));
+        System.out.println("Quedan " + Deck.size() + " cartas \n");
     }
-    public static void hand(ArrayList DECK){
+    public static void hand(ArrayList Deck){
+        System.out.println("Hand");
         for(int i=0; i<=4; i++){
-            System.out.println(DECK.get(i));
+            System.out.println(Deck.get(i));
         }
         for(int i=0; i<=4; i++){
-            DECK.remove(i);
+            Deck.remove(i);
         }
-        System.out.println("Quedan " + DECK.size()+ " cartas");
+        System.out.println("Quedan " + Deck.size()+ " cartas");
     }
 }
